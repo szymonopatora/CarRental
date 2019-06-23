@@ -3,6 +3,7 @@ package com.carrental.persistence.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dom4j.Branch;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,5 +24,6 @@ public class Reservation {
     private Car car;
     private LocalDate dateRental;
     private LocalDate dateReturn;
+    private Double rentalCost;
 
 }
