@@ -1,7 +1,6 @@
 package com.carrental.persistence.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Branch {
@@ -17,12 +16,4 @@ public class Branch {
     private String zipCode;
 
     private String country;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMPLOYEE_ID")
-    private List<Employee> employees;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "CAR_ID")
-    private List<Car> cars;
 }

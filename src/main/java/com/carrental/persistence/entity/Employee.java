@@ -18,7 +18,7 @@ public class Employee {
     @Enumerated(EnumType.STRING)
     private Position position;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "BRANCH_ID")
     private Branch branch;
 }
