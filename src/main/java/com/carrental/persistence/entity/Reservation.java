@@ -3,12 +3,8 @@ package com.carrental.persistence.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.dom4j.Branch;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -20,10 +16,23 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Client client;
-    private Car car;
     private LocalDate dateRental;
     private LocalDate dateReturn;
     private Double rentalCost;
 
+    @OneToOne()
+    @JoinColumn(name = "client_id")
+    private Client client;
+
+    @OneToOne()
+    @JoinColumn(name = "car_id")
+    private Car car;
+
+    @OneToOne()
+    @JoinColumn(name = "branch_id")
+    private Branch branchRental;
+
+    @OneToOne()
+    @JoinColumn(name = "branch_id")
+    private Branch branchReturn;
 }
