@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-public class Rental {
+public class ReturnCar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,7 +13,9 @@ public class Rental {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private User user;
 
-    private LocalDate dateRental;
+    private LocalDate dateReturn;
+
+    private Double extraCost;
 
     private String remarks;
 
