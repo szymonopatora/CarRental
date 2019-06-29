@@ -1,4 +1,4 @@
 package com.carrental.service;
 
-public class TestService {
+public class UserService {
 }
