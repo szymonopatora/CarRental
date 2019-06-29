@@ -21,22 +21,14 @@ public class Reservation {
     private Double rentalCost;
 
     @OneToOne()
-<<<<<<< Updated upstream
-    @JoinColumn(name = "client_id")
-    private Client client;
-=======
     private User client;
->>>>>>> Stashed changes
 
     @OneToOne()
-    @JoinColumn(name = "car_id")
     private Car car;
 
     @OneToOne()
-    @JoinColumn(name = "branch_id")
     private Branch branchRental;
 
     @OneToOne()
-    @JoinColumn(name = "branch_id")
     private Branch branchReturn;
 }
