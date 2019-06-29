@@ -38,4 +38,11 @@ public class UserController {
         userService.saveUser(userDto);
         return "redirect:/";
     }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("user", new UserDto());
+        return "loginForm";
+    }
+
 }
