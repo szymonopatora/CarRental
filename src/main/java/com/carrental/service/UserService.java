@@ -5,7 +5,7 @@ import com.carrental.persistence.entity.User;
 import com.carrental.persistence.repository.RoleRepository;
 import com.carrental.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,9 +21,10 @@ public class UserService {
     }
 
     public void saveUser(UserDto userDto) {
-        String encodedPassword = new BCryptPasswordEncoder().encode(userDto.getPassword());
+        //String encodedPassword = new BCryptPasswordEncoder().encode(userDto.getPassword());
 //addUserRole
-        User user = new User(userDto.getName(), userDto.getLastName(), userDto.getEmail(), encodedPassword);
+        User user = new User(userDto.getName(), userDto.getLastName(), userDto.getEmail(), "123");
+        user.addRole(roleRepository.getOne(2L));
         userRepository.save(user);
     }
 }

@@ -47,5 +47,9 @@ public class User {
 
    @ManyToOne
    private Branch branch;
+
+    public void addRole(Role role) {
+        this.roles.add(role);
+    }
 }
 

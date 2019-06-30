@@ -2,11 +2,17 @@ package com.carrental.persistence.entity;
 
 import com.carrental.persistence.enums.Body;
 import com.carrental.persistence.enums.Status;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Year;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Car {
 
     @Id
@@ -15,7 +21,7 @@ public class Car {
     private String brand;
     private String model;
     private Body body;
-    private Year YearOfProduction;
+    private Year yearOfProduction;
     private String color;
     private Status status;
     private Double rentalFee;
