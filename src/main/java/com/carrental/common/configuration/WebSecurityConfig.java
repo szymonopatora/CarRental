@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // SQL dla logowania użytkownika po adresie email i haśle
                 .usersByUsernameQuery("SELECT u.email, u.password, u.active FROM user u WHERE u.email = ?")
                 // SQL dla przypisania uprawnień dla zalogowanego użytkownika
-                .authoritiesByUsernameQuery("SELECT u.email, role_name FROM user u WHERE u.email = ?")
+                .authoritiesByUsernameQuery("SELECT u.email, r.role_name FROM user u JOIN role r ON r.id = u.role_id WHERE u.email = ?")
                 // wynik logowania
                 .dataSource(dataSource)
                 // szyfrowanie hasła
