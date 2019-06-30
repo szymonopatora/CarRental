@@ -21,7 +21,7 @@ public class Car {
     private String brand;
     private String model;
     private Body body;
-    private Year yearOfProduction;
+    private Short yearOfProduction;
     private String color;
     private Status status;
     private Double rentalFee;
@@ -29,4 +29,22 @@ public class Car {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "BRANCH_ID")
     private Branch branch;
+
+    /*@Converter(autoApply = true)
+    public class YearAttributeConverter
+            implements AttributeConverter<Year, Short> {
+
+        @Override
+        public Short convertToDatabaseColumn(
+                Year attribute) {
+            return (short) attribute.getValue();
+        }
+
+        @Override
+        public Year convertToEntityAttribute(
+                Short dbData) {
+            return Year.of(dbData);
+        }
+    }*/
 }
+
