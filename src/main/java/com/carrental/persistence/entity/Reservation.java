@@ -21,7 +21,7 @@ public class Reservation {
     private Double rentalCost;
 
     @OneToOne()
-    private User user;
+    private User client;
 
     @OneToOne()
     private Car car;
