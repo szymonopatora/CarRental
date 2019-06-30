@@ -21,7 +21,7 @@ public class Car {
     private String brand;
     private String model;
     private Body body;
-    private Short YearOfProduction;
+    private Short yearOfProduction;
     private String color;
     private Status status;
     private Double rentalFee;

@@ -21,9 +21,10 @@ public class UserService {
     }
 
     public void saveUser(UserDto userDto) {
-        //String encodedPassword = new BCryptPasswordEncoder().encode(userDto.getPassword());
-//addUserRole
-        User user = new User(userDto.getName(), userDto.getLastName(), userDto.getEmail(), "qwerty");
+        String encodedPassword = new BCryptPasswordEncoder().encode(userDto.getPassword());
+
+        User user = new User(userDto.getName(), userDto.getLastName(), userDto.getEmail(), encodedPassword);
+        user.addRole(roleRepository.getOne(2L));
         userRepository.save(user);
     }
 }
