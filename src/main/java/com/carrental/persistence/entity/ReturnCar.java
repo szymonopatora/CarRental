@@ -3,7 +3,6 @@ package com.carrental.persistence.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -19,11 +18,8 @@ public class ReturnCar {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private User employeeReturning;
-
     private LocalDate dateReturn;
-
     private Double extraCost;
-
     private String remarks;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

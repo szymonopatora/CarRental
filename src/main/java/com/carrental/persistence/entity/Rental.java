@@ -1,9 +1,9 @@
 package com.carrental.persistence.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Rental {
 
     @Id
@@ -19,9 +20,7 @@ public class Rental {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private User employeeRenting;
-
     private LocalDate dateRental;
-
     private String remarks;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

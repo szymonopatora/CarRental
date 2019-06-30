@@ -1,6 +1,6 @@
 package com.carrental.persistence.entity;
 
-
+import com.carrental.persistence.embeddable.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,7 +31,6 @@ public class User {
         this.password = password;
     }
 
-
     @ManyToOne
     private Role role;
 
@@ -41,5 +40,7 @@ public class User {
     public void addRole(Role role) {
         this.role = role;
     }
+  
+    @Embedded
+    private Address address;
 }
-

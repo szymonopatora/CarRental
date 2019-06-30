@@ -3,6 +3,8 @@ package com.carrental.persistence.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.carrental.persistence.embeddable.Address;
+
 
 import javax.persistence.*;
 
@@ -16,11 +18,6 @@ public class Branch {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String street;
-
-    private String city;
-
-    private String zipCode;
-
-    private String country;
+    @Embedded
+    private Address address;
 }
