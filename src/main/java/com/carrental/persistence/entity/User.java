@@ -1,6 +1,5 @@
 package com.carrental.persistence.entity;
 
-
 import com.carrental.persistence.embeddable.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -34,17 +31,16 @@ public class User {
         this.password = password;
     }
 
-    @Embedded
-    private Address address;
-
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-        @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-        )
-    private Set<Role> roles = new HashSet<>();
+    @ManyToOne
+    private Role role;
 
     @ManyToOne
     private Branch branch;
+
+    public void addRole(Role role) {
+        this.role = role;
+    }
+  
+    @Embedded
+    private Address address;
 }
