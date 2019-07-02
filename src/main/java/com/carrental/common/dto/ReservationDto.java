@@ -25,4 +25,7 @@ public class ReservationDto {
     private Branch branchRental;
     @NotBlank
     private Branch branchReturn;
+
+    public ReservationDto(Branch branch1, Branch branch2) {
+    }
 }
