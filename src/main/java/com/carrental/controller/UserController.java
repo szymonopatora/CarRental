@@ -1,6 +1,6 @@
 package com.carrental.controller;
 
-import com.carrental.common.UserDto;
+import com.carrental.common.dto.UserDto;
 import com.carrental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
