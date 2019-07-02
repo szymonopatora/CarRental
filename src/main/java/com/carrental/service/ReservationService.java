@@ -4,7 +4,9 @@ import com.carrental.common.dto.ReservationDto;
 import com.carrental.persistence.entity.Reservation;
 import com.carrental.persistence.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ReservationService {
 
     private ReservationRepository reservationRepository;
@@ -18,5 +20,6 @@ public class ReservationService {
         Reservation reservation = new Reservation(reservationDto.getDateRental(), reservationDto.getDateReturn()
                 , reservationDto.getRentalCost(), reservationDto.getClient(), reservationDto.getCar(),
                 reservationDto.getBranchRental(), reservationDto.getBranchReturn());
+        reservationRepository.save(reservation);
     }
 }
