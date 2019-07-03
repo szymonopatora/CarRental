@@ -1,4 +1,3 @@
-/*
 package com.carrental.service;
 
 import com.carrental.CarRentalApplication;
@@ -51,4 +50,4 @@ public class ReservationServiceTest {
         //then
         assertEquals(expectedSize, size);
     }
-}*/
+}

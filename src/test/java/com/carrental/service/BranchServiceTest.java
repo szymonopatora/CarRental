@@ -1,4 +1,3 @@
-/*
 package com.carrental.service;
 
 import com.carrental.CarRentalApplication;
@@ -79,4 +78,4 @@ public class BranchServiceTest {
         branchRepository.save(branch2);
         branchRepository.save(branch3);
     }
-}*/
+}
