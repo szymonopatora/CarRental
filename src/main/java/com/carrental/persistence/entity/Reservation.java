@@ -34,6 +34,7 @@ public class Reservation {
     @OneToOne()
     private Branch branchReturn;
 
+
     public Reservation(LocalDate dateRental, LocalDate dateReturn, Double rentalCost, User client,
                        Car car, Branch branchRental, Branch branchReturn) {
         this.dateRental = dateRental;

@@ -26,6 +26,6 @@ public class ReservationDto {
     @NotBlank
     private Branch branchReturn;
 
-    public ReservationDto(Branch branch1, Branch branch2) {
+    public ReservationDto() {
     }
 }
