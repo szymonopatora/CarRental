@@ -17,7 +17,7 @@ public class UserDto {
     private String lastName;
 
     @NotBlank(message = "Insert your email")
-    @Email(message = "Your email is not valid")
+    @Email( message = "Your email is not valid") //regexp ="^[A-Za-z0-9+_.-]+@(.+)$",
     private String email;
 
     @NotBlank(message = "Password cant be empty")

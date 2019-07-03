@@ -1,4 +1,4 @@
-package com.carrental.common;
+package com.carrental.common.dto;
 
 import com.carrental.persistence.embeddable.Address;
 import lombok.AllArgsConstructor;
