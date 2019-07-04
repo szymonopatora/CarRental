@@ -20,7 +20,8 @@ public class Reservation {
     private LocalDate dateRental;
     private LocalDate dateReturn;
     private Double rentalCost;
-    private LocalDateTime registrationDate = LocalDateTime.now();
+    private LocalDateTime reservationDate = LocalDateTime.now();
+    private LocalDateTime cancelDate = LocalDateTime.now();
 
     @OneToOne()
     private User client;
@@ -44,5 +45,10 @@ public class Reservation {
         this.car = car;
         this.branchRental = branchRental;
         this.branchReturn = branchReturn;
+    }
+
+    public void calculateRenatlCost(){
+
+        //cancelDate
     }
 }

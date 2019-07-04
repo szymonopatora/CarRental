@@ -35,6 +35,6 @@ public class ReservationController {
             return "reservationForm";
         }
         reservationService.saveReservation(reservationDto);
-        return "/redirect";
+        return "redirect:/";
     }
 }
