@@ -61,7 +61,7 @@ public class Reservation {
 
         long timeRemainingToRental = Math.abs(cancellationPeriod.toDays());
 
-        if (timeRemainingToRental >= 2) {
+        if (timeRemainingToRental > 2) {
             rentalCost = 0.0;
         } else if (timeRemainingToRental < 2) {
             rentalCost = (rentalCost) * 0.2;
