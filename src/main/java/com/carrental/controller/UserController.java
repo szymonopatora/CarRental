@@ -1,6 +1,7 @@
 package com.carrental.controller;
 
 import com.carrental.common.dto.UserDto;
+import com.carrental.persistence.entity.User;
 import com.carrental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,14 +39,18 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Model model) {
-        model.addAttribute("user", new UserDto());
+        model.addAttribute("user", new User());
         return "loginForm";
     }
 
-    @PostMapping
-    public String login(@ModelAttribute("user") @Valid UserDto user) {
-
+    @PostMapping("/login")
+    public String login(@ModelAttribute("user") @Valid User user) {
+        if (user.getRole().equals(1L)) {
+            return "administration";
+        }
+        return "loginForm";
     }
+
     @PutMapping("/addEmployee/{id}")
     public void addEmployee(@PathVariable Long id) {
         userService.addEmployee(id);
