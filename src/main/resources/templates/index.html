@@ -1,357 +1,191 @@
 <!DOCTYPE html>
 <html xmlns:th=”http://www.thymeleaf.org”>
 <html lang="en">
+
 <head>
+    <title>Car rent</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <title>Car Rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        }
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+        label {
+            margin-top: 15px;
+        }
 
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body id="page-top">
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-        <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>-->
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#register">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<!-- Header -->
-<header class="masthead">
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead-in">Welcome To Our Car Rental!</div>
-            <div class="intro-heading text-uppercase">Time to ride!</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Reservation</a>
+<body>
+<section>
+    <div class="d-flex text-light flex-column pt-5" lc-helper="background" style="min-height: 100vh; background-size:cover; background-position: center center;background-color:#eee; background-attachment:scroll;background-image: url(https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9); background-attachment: fixed;">
+        <div class="w-100 text-center flex-start align-content-start" style="margin-bottom: auto; ">
+            <h1 class="font-weight-bold animated  tada" style="font-size:10vw;" editable="inline">CAR RENTAL</h1>
+            <p class="font-weight-light" style="font-size:2vw;" editable="inline">Time to ride!</p>
         </div>
-    </div>
-</header>
-
-<!-- Services -->
-<section class="page-section" id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Services</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-          </span>
-                <h4 class="service-heading">Branches</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-                <h4 class="service-heading">Cars</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet.</p>
-            </div>
-
+        <div class="w-100 text-center flex-end align-content-end" style="margin-top: auto; ">
+            <a href="#login"><i class="fa text-warning p-5 fa-arrow-circle-down animated fadeIn" style="font-size:50px; align-self: flex-end; margin-top: auto;">
+            </i></a>
         </div>
     </div>
 </section>
-
-
-
-<!-- Team -->
-<section class="bg-light page-section" id="team">
-    <div class="container">
+<section>
+    <div class="container-fluid p-0" id="login">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-                    <h4>Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="col-md-6">
+                <div class="lc-block p-5">
+                    <div editable="rich">
+                        <form action="/List" class="form-horizontal">
+                            <fieldset>
+                                <!-- Form Name -->
+                                <h1>Booking</h1>
+                                <!-- Select Basic -->
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <label class="control-label" for="Start">Place of start</label>
+                                        <select id="Start" name="Start" class="form-control">
+                                            <option value="1">Choose a city</option>
+                                            <option value="2">Wrocław</option>
+                                            <option value="3">Poznań</option>
+                                            <option value="4">Torzym</option>
+                                            <option value="4">Kraków</option>
+                                            <option value="4">Gdynia</option>
+                                            <option value="4">Lubin</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <label class="col-md-6 control-label" for="destination">Destination</label>
+                                        <select id="destination" name="destination" class="form-control">
+                                            <option value="1">Choose a city</option>
+                                            <option value="2">Wrocław</option>
+                                            <option value="3">Poznań</option>
+                                            <option value="4">Torzym</option>
+                                            <option value="4">Kraków</option>
+                                            <option value="4">Gdynia</option>
+                                            <option value="4">Lubin</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <!-- Text input-->
+                                        <label class="control-label" for="data">Date of rental</label>
+                                        <input id="data" name="data" type="text" placeholder="DD.MM.YYYY" class="form-control input-md">
+
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <!-- Text input-->
+                                        <label class="control-label" for="data2">Date of return</label>
+                                        <input id="data2" name="data2" type="text" placeholder="DD.MM.YYYY" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-6 ">
+                                    <label class="col-md-6 control-label" for="destination">Choose car</label>
+                                    <select id="destination" name="destination" class="form-control">
+                                        <option value="1">-</option>
+                                        <option value="2">Fiat</option>
+                                        <option value="3">Poznań</option>
+                                        <option value="4">Torzym</option>
+                                        <option value="4">Kraków</option>
+                                        <option value="4">Gdynia</option>
+                                        <option value="4">Lubin</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-6 ">
+                                <label class="control-label" for="koszt">Estimated cost</label>
+                                <input id="koszt" name="koszt" type="text" placeholder="" class="form-control input-md">
+                                </div>
+                                </div>
+
+
+                                <!-- Button -->
+
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                               <a href=""> <button id="singlebutton" name="singlebutton" class="btn btn-primary">Search</button></a>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
+                <!-- /lc-block -->
             </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-                    <h4>Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
+            <!-- /col -->
+            <div class="col-md-6" style="background: url(https://images.unsplash.com/photo-1549275301-c9d60945be6b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9); background-attachment: fixed; background-position: center right">
+                <div class="lc-block d-block mh-50">
+                    <div editable="rich" class="p-5 text-light">
+                    </div>
                 </div>
+                <!-- /lc-block -->
             </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-                    <h4>Diana Pertersen</h4>
-                    <p class="text-muted">Lead Developer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <p class="large text-muted">Lorem ipsum dolor sit amet.</p>
-            </div>
+            <!-- /col -->
         </div>
     </div>
 </section>
 
-<!-- Clients -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Contact -->
-<section class="page-section" id="register">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Registration</h2>
-                <h3 class="section-subheading text-muted">Please register on our Car Rental.</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <form th:action="@{/register}" th:method="post" th:object="${user}">
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Name</label>
-                            <input th:field="*{name}" type="text" class="form-control" placeholder="name">
-                            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger">error-message</span>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Last name</label>
-                            <input th:field="*{lastName}" type="text" class="form-control" placeholder="last name">
-                            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-danger">error-message</span>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Email</label>
-                            <input th:field="*{email}" type="text" class="form-control" placeholder="email">
-                            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger">error-message</span>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Password</label>
-                            <input th:field="*{password}" type="password" class="form-control" placeholder="Password">
-                            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger">error-message</span>
-
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">register</button>
-                    </div>
-                </form>
-<!--                <form id="registerForm" name="register" novalidate="novalidate">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="form-group">-->
-<!--                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">-->
-<!--                                <p class="help-block text-danger"></p>-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <input class="form-control" id="lastName" type="text" placeholder="Your Last name *" required="required" data-validation-required-message="Please enter your name.">-->
-<!--                                <p class="help-block text-danger"></p>-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">-->
-<!--                                <p class="help-block text-danger"></p>-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <input class="form-control" id="password" type="text" placeholder="Your Password *" required="required" data-validation-required-message="Please enter your phone number.">-->
-<!--                                <p class="help-block text-danger"></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="clearfix"></div>-->
-<!--                    <div class="col-lg-12 text-center">-->
-<!--                        <div id="success"></div>-->
-<!--                        <button id="register" class="btn btn-primary btn-xl text-uppercase" type="submit">register</button>-->
-<!--                    </div>-->
-<!--            </div>-->
-<!--            </form>-->
-        </div>
-    </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Your Website 2019</span>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<footer class="p-5 bg-dark text-center text-light">
+    ® Car rent
 </footer>
 
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Contact form JavaScript -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="js/agency.min.js"></script>
-
 </body>
+
+<script>
+    / Select all links with hashes
+    $('a[href*="#"]')
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
+</script>
 
 </html>
