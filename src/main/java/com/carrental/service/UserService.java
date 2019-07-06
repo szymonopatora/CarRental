@@ -27,4 +27,16 @@ public class UserService {
         user.addRole(roleRepository.getOne(2L));
         userRepository.save(user);
     }
+
+    public void addEmployee(Long id) {
+        User userToEmployee = userRepository.getOne(id);
+        userToEmployee.addRole(roleRepository.getOne(4L));
+        userRepository.save(userToEmployee);
+    }
+
+    public void addManager(Long id) {
+        User userToManager = userRepository.getOne(id);
+        userToManager.addRole(roleRepository.getOne(3L));
+        userRepository.save(userToManager);
+    }
 }
