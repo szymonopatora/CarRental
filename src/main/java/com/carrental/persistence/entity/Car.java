@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.Year;
+
 
 @Entity
 @Data
@@ -30,21 +30,5 @@ public class Car {
     @JoinColumn(name = "BRANCH_ID")
     private Branch branch;
 
-    /*@Converter(autoApply = true)
-    public class YearAttributeConverter
-            implements AttributeConverter<Year, Short> {
-
-        @Override
-        public Short convertToDatabaseColumn(
-                Year attribute) {
-            return (short) attribute.getValue();
-        }
-
-        @Override
-        public Year convertToEntityAttribute(
-                Short dbData) {
-            return Year.of(dbData);
-        }
-    }*/
 }
 
