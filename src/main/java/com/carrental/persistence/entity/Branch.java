@@ -12,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @Entity
+
 public class Branch {
 
     @Id

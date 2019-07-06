@@ -1,140 +1,191 @@
 <!DOCTYPE html>
 <html xmlns:th=”http://www.thymeleaf.org”>
+<html lang="en">
 
 <head>
-
+    <title>Car rent</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <!--<meta name="author" content="">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <title>Rental Car</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        }
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <!-- Custom styles for this template -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+        label {
+            margin-top: 15px;
+        }
 
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand text-warning" th:if="${auth == null}">Not logged in</a>
-        <a class="navbar-brand text-success" th:if="${auth != null}" th:text="${auth.getPrincipal().getUsername()}">Login in</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:if="${auth == null}" th:href="@{/login}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:if="${auth != null}" th:href="@{/logout}">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/}">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/register}">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/contact}">Contact</a>
-                </li>
-            </ul>
+<section>
+    <div class="d-flex text-light flex-column pt-5" lc-helper="background" style="min-height: 100vh; background-size:cover; background-position: center center;background-color:#eee; background-attachment:scroll;background-image: url(https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9); background-attachment: fixed;">
+        <div class="w-100 text-center flex-start align-content-start" style="margin-bottom: auto; ">
+            <h1 class="font-weight-bold animated  tada" style="font-size:10vw;" editable="inline">CAR RENTAL</h1>
+            <p class="font-weight-light" style="font-size:2vw;" editable="inline">Time to ride!</p>
+        </div>
+        <div class="w-100 text-center flex-end align-content-end" style="margin-top: auto; ">
+            <a href="#login"><i class="fa text-warning p-5 fa-arrow-circle-down animated fadeIn" style="font-size:50px; align-self: flex-end; margin-top: auto;">
+            </i></a>
         </div>
     </div>
-</nav>
-
-<!-- Page Header -->
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
+</section>
+<section>
+    <div class="container-fluid p-0" id="login">
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h1>Car Rental</h1>
-                    <span class="subheading">The best option for driving</span>
+            <div class="col-md-6">
+                <div class="lc-block p-5">
+                    <div editable="rich">
+                        <form action="/List" class="form-horizontal">
+                            <fieldset>
+                                <!-- Form Name -->
+                                <h1>Booking</h1>
+                                <!-- Select Basic -->
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <label class="control-label" for="Start">Place of start</label>
+                                        <select id="Start" name="Start" class="form-control">
+                                            <option value="1">Choose a city</option>
+                                            <option value="2">Wrocław</option>
+                                            <option value="3">Poznań</option>
+                                            <option value="4">Torzym</option>
+                                            <option value="4">Kraków</option>
+                                            <option value="4">Gdynia</option>
+                                            <option value="4">Lubin</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <label class="col-md-6 control-label" for="destination">Destination</label>
+                                        <select id="destination" name="destination" class="form-control">
+                                            <option value="1">Choose a city</option>
+                                            <option value="2">Wrocław</option>
+                                            <option value="3">Poznań</option>
+                                            <option value="4">Torzym</option>
+                                            <option value="4">Kraków</option>
+                                            <option value="4">Gdynia</option>
+                                            <option value="4">Lubin</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <!-- Text input-->
+                                        <label class="control-label" for="data">Date of rental</label>
+                                        <input id="data" name="data" type="text" placeholder="DD.MM.YYYY" class="form-control input-md">
+
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <!-- Text input-->
+                                        <label class="control-label" for="data2">Date of return</label>
+                                        <input id="data2" name="data2" type="text" placeholder="DD.MM.YYYY" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-6 ">
+                                    <label class="col-md-6 control-label" for="destination">Choose car</label>
+                                    <select id="destination" name="destination" class="form-control">
+                                        <option value="1">-</option>
+                                        <option value="2">Fiat</option>
+                                        <option value="3">Poznań</option>
+                                        <option value="4">Torzym</option>
+                                        <option value="4">Kraków</option>
+                                        <option value="4">Gdynia</option>
+                                        <option value="4">Lubin</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-6 ">
+                                <label class="control-label" for="koszt">Estimated cost</label>
+                                <input id="koszt" name="koszt" type="text" placeholder="" class="form-control input-md">
+                                </div>
+                                </div>
+
+
+                                <!-- Button -->
+
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                               <a href=""> <button id="singlebutton" name="singlebutton" class="btn btn-primary">Search</button></a>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
+                <!-- /lc-block -->
             </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <!--<div th:each="post : ${posts}" class="post-preview">
-                <h2 th:text="${post.getTitle()}" class="post-title">
-                    Cars
-                </h2>
-                <p th:text="${'Posted by ' + post.getUser().getLogin()}" class="post-meta"> author </p>
-                <p th:text="${'Publication date ' + post.getAdded_data()}" class="post-meta"> date </p>
-                <hr>
-            </div>-->
-            <!-- Pager -->
-        </div>
-    </div>
-</div>
-
-<hr>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <ul class="list-inline text-center">
-                    <li class="list-inline-item">
-                        <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-                        </a>
-                    </li>
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+            <!-- /col -->
+            <div class="col-md-6" style="background: url(https://images.unsplash.com/photo-1549275301-c9d60945be6b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9); background-attachment: fixed; background-position: center right">
+                <div class="lc-block d-block mh-50">
+                    <div editable="rich" class="p-5 text-light">
+                    </div>
+                </div>
+                <!-- /lc-block -->
             </div>
+            <!-- /col -->
         </div>
     </div>
+</section>
+
+
+<footer class="p-5 bg-dark text-center text-light">
+    ® Car rent
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="js/clean-blog.min.js"></script>
-
 </body>
+
+<script>
+    / Select all links with hashes
+    $('a[href*="#"]')
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
+</script>
 
 </html>

@@ -23,10 +23,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/register")
+    @GetMapping("/")
     public String register(Model model) {
         model.addAttribute("user", new UserDto());
-        return "registerForm";
+        return "index";
     }
 
     @PostMapping("/register")
@@ -39,10 +39,10 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("user", new UserDto());
-        return "loginForm";
-    }
+//    @GetMapping("/login")
+//    public String login(Model model) {
+//        model.addAttribute("user", new UserDto());
+//        return "loginForm";
+//    }
 
 }
