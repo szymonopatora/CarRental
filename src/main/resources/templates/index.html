@@ -15,7 +15,47 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+
+            aria-label="Toggle navigation">
+
+        Menu
+
+        <i class="fas fa-bars"></i>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        <ul class="navbar-nav text-uppercase ml-auto">
+
+            <!--<li class="nav-item">
+
+                <a class="nav-link js-scroll-trigger" href="#register">Registration</a>
+
+            </li>-->
+
+            <li class="nav-item">
+
+                <a class="nav-link js-scroll-trigger" th:href="@{/register}">Registration</a>
+
+                <!--<a th:href="@{/statistics}">Statistics</a>-->
+
+                <form th:action="@{/Login}" th:method="post" th:object="${user}">
+
+                </form>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
     <style>
+
         body {
             font-family: 'Montserrat', Arial, Helvetica, sans-serif;
         }
@@ -60,8 +100,8 @@
                                 <!-- Select Basic -->
                                 <div class="row">
                                     <div class="col-md-6 ">
-                                        <label class="control-label" for="Start">Place of start</label>
-                                        <select id="Start" name="Start" class="form-control">
+                                        <label class="control-label" for="start">Place of start</label>
+                                        <select id="Start" name="start" class="form-control">
                                             <option value="1">Choose a city</option>
                                             <option value="2">Wrocław</option>
                                             <option value="3">Poznań</option>

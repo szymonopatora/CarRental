@@ -2,7 +2,7 @@ package com.carrental.service;
 
 import com.carrental.CarRentalApplication;
 import com.carrental.common.dto.BranchDto;
-import com.carrental.persistence.embeddable.Address;
+import com.carrental.persistence.entity.embeddable.Address;
 import com.carrental.persistence.entity.Branch;
 import com.carrental.persistence.repository.BranchRepository;
 import org.junit.Test;

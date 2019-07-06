@@ -1,7 +1,7 @@
 package com.carrental.persistence.entity;
 
-import com.carrental.persistence.enums.Body;
-import com.carrental.persistence.enums.Status;
+import com.carrental.persistence.entity.enums.Body;
+import com.carrental.persistence.entity.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

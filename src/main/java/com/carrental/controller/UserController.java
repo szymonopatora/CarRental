@@ -21,11 +21,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
-    public String register(Model model) {
-        model.addAttribute("user", new User());
-        return "index";
-    }
 
     @PostMapping("/register")
     public String register(@ModelAttribute("user") @Valid UserDto userDto,
@@ -37,13 +32,18 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/register")
+    public String register(Model model){
+        model.addAttribute("user",new UserDto());
+        return "/login";
+    }
 //    @GetMapping("/login")
 //    public String login(Model model) {
 //        model.addAttribute("user", new UserDto());
 //        return "loginForm";
 //    }
 
-    @PostMapping
+    @PostMapping("/login")
     public String login(@ModelAttribute("user") @Valid User user) {
         if (user.getRole().equals(1L)) {
             return "administration";
@@ -51,13 +51,14 @@ public class UserController {
         return "loginForm";
     }
 
-    @PutMapping("/addEmployee/{id}")
-    public void addEmployee(@PathVariable Long id) {
-        userService.addEmployee(id);
+    @GetMapping("/addRole")
+    public String addRole() {
+        return "addRole";
     }
 
-    @PutMapping("/addManager/{id}")
-    public void addManager(@PathVariable Long id) {
-        userService.addManager(id);
+    @PutMapping("/addRole/{id}/{id}")
+    public void addEmployee(@PathVariable Long id, Long role_id) {
+        userService.addRole(id, role_id);
     }
+
 }

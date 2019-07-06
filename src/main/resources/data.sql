@@ -13,3 +13,9 @@ insert into car (id, year_of_production, body, brand, color, model, rental_fee, 
 (4,2019,2,'Mercedes','silver','C',120,2,1),
 (5,2017,1,'Citroen','grey','C4',100,2,4),
 (6,2019,4,'Toyota','white','RAV4',130,2,6);
+
+insert into role (id, role_name) values
+(1, 'Admin'),
+(2, 'Customer'),
+(3, 'Manager'),
+(4, 'Employee');

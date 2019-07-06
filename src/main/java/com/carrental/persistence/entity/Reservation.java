@@ -25,20 +25,20 @@ public class Reservation {
     private Long id;
     private LocalDate dateRental;
     private LocalDate dateReturn;
-    private double rentalCost = calculateRentalCost();
+    private Double rentalCost;
     private LocalDateTime reservationDate = LocalDateTime.now();
     private LocalDateTime cancelDate = LocalDateTime.now();
 
-    @OneToOne()
+    @OneToOne
     private User client;
 
-    @OneToOne()
+    @OneToOne
     private Car car;
 
-    @OneToOne()
+    @OneToOne
     private Branch branchRental;
 
-    @OneToOne()
+    @OneToOne
     private Branch branchReturn;
 
 
@@ -55,8 +55,7 @@ public class Reservation {
 
     public Double calculateRentalCost() {
 
-        Car car = new Car();
-        double rentalFee = car.getRentalFee();
+        Double rentalFee = car.getRentalFee();
         Duration rentalDuration = Duration.between(dateRental, dateReturn);
 
         long rentalTime = Math.abs(rentalDuration.toDays());
@@ -74,6 +73,15 @@ public class Reservation {
             if (!branchRental.equals(branchReturn)) {
                 rentalCost = rentalCost + DIFFERENT_RETURN_BRANCH;
             }
+        }
+        return rentalCost;
+    }
+
+    private Double getRentalCost() {
+        if (this.rentalCost != null) {
+            return rentalCost;
+        } else {
+            rentalCost = calculateRentalCost();
         }
         return rentalCost;
     }

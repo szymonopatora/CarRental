@@ -1,4 +1,4 @@
-package com.carrental.persistence.embeddable;
+package com.carrental.persistence.entity.embeddable;
 
 import lombok.*;
 

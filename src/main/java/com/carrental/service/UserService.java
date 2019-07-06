@@ -28,15 +28,11 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void addEmployee(Long id) {
-        User userToEmployee = userRepository.getOne(id);
-        userToEmployee.addRole(roleRepository.getOne(4L));
-        userRepository.save(userToEmployee);
+    public void addRole(Long id, Long role_id) {
+        User user = userRepository.getOne(id);
+        user.addRole(roleRepository.getOne(role_id));
+        userRepository.save(user);
     }
 
-    public void addManager(Long id) {
-        User userToManager = userRepository.getOne(id);
-        userToManager.addRole(roleRepository.getOne(3L));
-        userRepository.save(userToManager);
-    }
+
 }
