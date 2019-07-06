@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th=”http://www.thymeleaf.org”>
+<html lang="en">
+
+<head>
+    <title>Car rent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        label {
+            margin-top: 15px;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<section>
+    <div class="container p-0" id="login">
+
+        <h1 class="text-center p-5"> Pay for rent</h1>
+        <div class="row p-5">
+
+            <!--           CAR-->
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://loremflickr.com/320/240/ferrari/all" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4>Car name</h4>
+                    </div>
+                </div>
+            </div>
+            <!-----------------------------;-->
+            <div class="col-md-8">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum pretium dictum. Proin turpis lorem, dapibus vel cursus in, lacinia vel lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus dignissim, risus eu fringilla pellentesque, quam lectus aliquet mi, in gravida lectus odio a turpis. In dictum tristique nibh dignissim tempor. Sed in ullamcorper eros, quis vestibulum justo. Nullam cursus lectus tristique, auctor enim id, suscipit sapien. In rhoncus dolor imperdiet mi hendrerit consectetur. Quisque eleifend lorem massa, eget rutrum elit pretium id.
+
+
+              </p>
+                        <button class="card-text btn btn-primary">Pay</button>
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+<footer class="p-5 bg-dark text-center text-light">
+    ® Car rent
+</footer>
+
+</body>
+
+<script>
+    / Select all links with hashes
+    $('a[href*="#"]')
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
+</script>
+
+</html>
