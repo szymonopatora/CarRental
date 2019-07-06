@@ -9,7 +9,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 public class UserController {
@@ -43,6 +42,10 @@ public class UserController {
 //        return "loginForm";
 //    }
 
+    @PostMapping
+    public String login(@ModelAttribute("user") @Valid UserDto user) {
+
+    }
     @PutMapping("/addEmployee/{id}")
     public void addEmployee(@PathVariable Long id) {
         userService.addEmployee(id);
