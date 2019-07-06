@@ -42,6 +42,10 @@ public class UserController {
         return "loginForm";
     }
 
+    @PostMapping
+    public String login(@ModelAttribute("user") @Valid UserDto user) {
+
+    }
     @PutMapping("/addEmployee/{id}")
     public void addEmployee(@PathVariable Long id) {
         userService.addEmployee(id);
