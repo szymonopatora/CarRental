@@ -16,6 +16,10 @@ import java.time.LocalDateTime;
 public class Reservation {
 
     private static final double DIFFERENT_RETURN_BRANCH = 150.00;
+    private static final double FULL_COST_RETURN_BEFORE_2_DAYS = 0.00;
+    private static final int TWO_DAYS_BEFORE_RENTAL = 2;
+    private static final double TWENTY_PERCENT_FEE_FOR_CANCELLATION = 0.20;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -61,10 +65,10 @@ public class Reservation {
 
         long timeRemainingToRental = Math.abs(cancellationPeriod.toDays());
 
-        if (timeRemainingToRental > 2) {
-            rentalCost = 0.0;
-        } else if (timeRemainingToRental < 2) {
-            rentalCost = (rentalCost) * 0.2;
+        if (timeRemainingToRental > TWO_DAYS_BEFORE_RENTAL) {
+            rentalCost = FULL_COST_RETURN_BEFORE_2_DAYS;
+        } else if (timeRemainingToRental < TWO_DAYS_BEFORE_RENTAL) {
+            rentalCost = (rentalCost) * TWENTY_PERCENT_FEE_FOR_CANCELLATION;
         } else {
             rentalCost = rentalFee * rentalTime;
             if (!branchRental.equals(branchReturn)) {
