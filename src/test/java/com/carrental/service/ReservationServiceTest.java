@@ -2,7 +2,7 @@ package com.carrental.service;
 
 import com.carrental.CarRentalApplication;
 import com.carrental.common.dto.ReservationDto;
-import com.carrental.persistence.embeddable.Address;
+import com.carrental.persistence.entity.embeddable.Address;
 import com.carrental.persistence.entity.Branch;
 import com.carrental.persistence.entity.Reservation;
 import com.carrental.persistence.repository.ReservationRepository;

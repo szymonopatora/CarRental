@@ -1,4 +1,4 @@
-package com.carrental.persistence.enums;
+package com.carrental.persistence.entity.enums;
 
 public enum Status {
     RENTED,

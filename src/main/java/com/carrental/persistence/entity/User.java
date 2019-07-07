@@ -1,6 +1,6 @@
 package com.carrental.persistence.entity;
 
-import com.carrental.persistence.embeddable.Address;
+import com.carrental.persistence.entity.embeddable.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

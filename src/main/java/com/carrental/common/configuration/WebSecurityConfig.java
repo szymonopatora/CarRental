@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // formularz logowania
                 .formLogin()
                 // adres formularza logowania
-                .loginPage("/login")
+                .loginPage("/register")
                 // nazwa pola w formularzu dot. loginu
                 .usernameParameter("email")
                 // nazwa pola w formularzu dot. hasła
@@ -65,6 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery("SELECT u.email, u.password, u.active FROM user u WHERE u.email = ?")
                 // SQL dla przypisania uprawnień dla zalogowanego użytkownika
                 .authoritiesByUsernameQuery("SELECT u.email, r.role_name FROM user u JOIN role r ON r.id = u.role_id WHERE u.email = ?")
+                //.authoritiesByUsernameQuery("SELECT u.email, r.role_name FROM users u JOIN users_role ur ON ur.users_id = u.id JOIN role r ON ur.role_id = r.id WHERE u.email = ?")
                 // wynik logowania
                 .dataSource(dataSource)
                 // szyfrowanie hasła

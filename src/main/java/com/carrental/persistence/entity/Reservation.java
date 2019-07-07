@@ -55,7 +55,7 @@ public class Reservation {
 
     public Double calculateRentalCost() {
 
-        Car car = new Car();
+        /*Car car = new Car();
         double rentalFee = car.getRentalFee();
         Duration rentalDuration = Duration.between(dateRental, dateReturn);
 
@@ -75,6 +75,7 @@ public class Reservation {
                 rentalCost = rentalCost + DIFFERENT_RETURN_BRANCH;
             }
         }
-        return rentalCost;
+        return rentalCost;*/
+        return 100.0d;
     }
 }

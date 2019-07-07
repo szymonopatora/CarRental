@@ -23,11 +23,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
-    public String register(Model model) {
-        model.addAttribute("user", new UserDto());
-        return "index";
-    }
 
     @PostMapping("/register")
     public String register(@ModelAttribute("user") @Valid UserDto userDto,
@@ -37,6 +32,12 @@ public class UserController {
         }
         userService.saveUser(userDto);
         return "redirect:/";
+    }
+
+    @GetMapping("/register")
+    public String  register1(Model model){
+        model.addAttribute("user",new UserDto());
+        return "/login";
     }
 
 //    @GetMapping("/login")
